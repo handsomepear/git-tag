@@ -18,7 +18,7 @@ if (!preEnv.includes(env)) {
 shell.exec(`git tag -a ${env}-${tagName} -m ${tagArgs.m} `, function (code, output) {
   if (code !== 0) {
     shell.echo('Error: Git tag failed');
-    shell.exit(1);
+    shell.exit(0);
   }
   shell.echo(`Tag: ${env}-${tagName} success`);
   shell.exec('git tag');
